@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VPS选购知识说明 · CN2 GIA/CMIN2/AS9929线路、住宅IP、No KYC、线路测试 | VPS1000</title>
+<meta name="description" content="VPS选购相关知识说明：CN2 GIA、CN2 GT、CMIN2、AS9929、AS4837线路名词表；原生IP/住宅IP/双ISP的含义与核验方法；No KYC的真实含义；VPS与云服务器、虚拟主机区别；线路质量测试方法；买完VPS后的装机流程与避坑清单。">
+<meta name="keywords" content="CN2 GIA是什么,CMIN2,AS9929,AS4837,住宅IP,原生IP,双ISP,No KYC,VPS线路测试,VPS和虚拟主机区别,VPS避坑">
+<link rel="canonical" href="./guides.html">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%232563eb'/&gt;&lt;text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'&gt;V&lt;/text&gt;&lt;/svg&gt;">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-badge">V</span>
+      <span>VPS1000<small>2026 海外VPS推荐指南</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">首页推荐</a>
+      <a href="scenarios.html">九大场景</a>
+      <a href="providers.html">厂商档案</a>
+      <a class="active" href="guides.html">选购知识</a>
+      <a href="faq.html">常见问题</a>
+    </nav>
+    <a class="header-cta" href="index.html#selector">智能帮我选 →</a>
+    <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mainNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">首页</a><span class="sep">/</span><span>选购知识与名词说明</span></nav>
+    <h1>VPS 选购知识：把名词和坑一次讲清</h1>
+    <p class="lead">线路名词、IP 类型、No KYC、测试方法、装机流程——买 VPS 前后你会遇到的所有概念，这一页集中说明。所有解释都对应本站收录的具体厂商与场景，不讲空理论。</p>
+    <div class="page-meta">
+      <span>最近核对：2026-09-03</span>
+      <span>9 个知识专题</span>
+      <span>配避坑清单</span>
+    </div>
+  </div>
+</section>
+
+<div class="container doc-layout">
+
+  <aside class="doc-toc">
+    <div class="toc-title">知识目录</div>
+    <nav class="toc-list">
+      <a href="#lines">① 线路名词表</a>
+      <a href="#ip-type">② IP 类型说明</a>
+      <a href="#no-kyc">③ No KYC 真实含义</a>
+      <a href="#vps-vs-hosting">④ VPS / 云服务器 / 虚拟主机</a>
+      <a href="#test">⑤ 线路质量测试方法</a>
+      <a href="#smtp-port">⑥ 邮件端口与 SMTP</a>
+      <a href="#media-unlock">⑦ 流媒体解锁原理</a>
+      <a href="#after-buy">⑧ 买完 VPS 后的流程</a>
+      <a href="#checklist">⑨ 选购避坑清单</a>
+      <a href="#standards">附：收录标准与声明</a>
+    </nav>
+  </aside>
+
+  <main class="doc-main">
+
+    <!-- ① 线路名词表 -->
+    <section class="doc-section" id="lines">
+      <div class="scene-head"><span class="sh-icon">🛣️</span><h2>① 线路名词表：CN2 GIA 到底是什么</h2></div>
+      <p class="sec-lead">回国优化场景最容易被名词绕晕。下面这张表把常见线路一次说清，并标注本站名单里的代表厂商。</p>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>线路名称</th><th>全称 / 归属</th><th>特点</th><th>名单内代表</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="pname">CN2 GIA</td>
+              <td class="muted">China Telecom Next Carrier Network - Global Internet Access（中国电信）</td>
+              <td>电信顶级精品线路，路由质量与高峰稳定性通常更好，价格通常更高；效果仍受本地运营商与机房负载影响</td>
+              <td>DMIT、搬瓦工、VMISS、RAKsmart</td>
+            </tr>
+            <tr>
+              <td class="pname">CN2 GT</td>
+              <td class="muted">China Telecom CN2 Global Transit（中国电信）</td>
+              <td>出口走 CN2、境内接入走普通 163 网络，质量介于 GIA 与普通线路之间</td>
+              <td>部分洛杉矶线路</td>
+            </tr>
+            <tr>
+              <td class="pname">CMIN2</td>
+              <td class="muted">China Mobile International Premium（中国移动）</td>
+              <td>移动精品回传线路，移动用户晚高峰表现通常更好</td>
+              <td>VMISS、SpartanHost</td>
+            </tr>
+            <tr>
+              <td class="pname">AS9929</td>
+              <td class="muted">China Unicom Premium（中国联通 A 网精品网）</td>
+              <td>联通精品线路，联通/部分移动用户延迟与丢包表现较好</td>
+              <td>搬瓦工、VMISS</td>
+            </tr>
+            <tr>
+              <td class="pname">AS4837</td>
+              <td class="muted">China Unicom 169 骨干（普通联通网）</td>
+              <td>联通普通骨干网，质量优于纯国际线路但低于 AS9929，价格更友好</td>
+              <td>SpartanHost</td>
+            </tr>
+            <tr>
+              <td class="pname">国际 BGP</td>
+              <td class="muted">多运营商对等互联</td>
+              <td>面向海外访问的常规线路，不做中国大陆专项优化</td>
+              <td>DMIT Tier 1、InterServer、Hostinger、Vultr</td>
+            </tr>
+            <tr>
+              <td class="pname">IIJ</td>
+              <td class="muted">日本 IIJ 运营商网络</td>
+              <td>日本本地优质运营商，流媒体解锁与日本访问表现好</td>
+              <td>VMISS 日本节点</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="co-icon">⚠️</span>
+        <p><strong>关键提醒：</strong>「CN2 GIA」标签 ≠ 实际体验。同一标签下，不同机房、不同套餐、不同本地运营商的路由都可能不同；
+        DMIT 的 <strong>Tier 1 系列就不含回国专项优化</strong>。下单前请用 <a href="#test">线路测试方法</a> 晚高峰实测，或选择支持退换的套餐。</p>
+      </div>
+    </section>
+
+    <!-- ② IP 类型说明 -->
+    <section class="doc-section" id="ip-type">
+      <div class="scene-head"><span class="sh-icon">🪪</span><h2>② IP 类型说明：原生 / 住宅 / 双 ISP</h2></div>
+      <p class="sec-lead">TikTok 运营、流媒体、邮件场景的核心变量是 IP 属性。先分清四种类型，再学会核验。</p>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>类型</th><th>含义</th><th>平台识别</th><th>典型用途</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">数据中心 IP</td><td class="muted">分配给机房 / 云服务商的 IP</td><td>最易被识别为「非真人」</td><td>建站、开发、常规代理</td></tr>
+            <tr><td class="pname">原生 IP</td><td class="muted">IP 注册地与机房所在地一致</td><td>地区一致性好，解锁本地服务概率高</td><td>流媒体、本地化业务</td></tr>
+            <tr><td class="pname">住宅 IP</td><td class="muted">分配给家庭宽带用户的 IP 段</td><td>被平台视为真实用户，纯净度高</td><td>TikTok 运营、风控敏感业务</td></tr>
+            <tr><td class="pname">双 ISP IP</td><td class="muted">同时挂两个 ISP 属性的 IP（如 VMISS 英国产品）</td><td>属性更接近真实家庭用户</td><td>社媒运营、SMTP</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>下单后的核验步骤</h3>
+      <ol>
+        <li>拿到 IP 后查询 <strong>ASN 与注册组织</strong>（whois / ipinfo），确认与宣传的 ISP 属性一致；</li>
+        <li>查询 <strong>广播地区</strong>（GeoIP），确认与业务目标地区一致；</li>
+        <li>在目标平台（TikTok / Netflix / 邮箱服务商）做小规模<strong>风控实测</strong>；</li>
+        <li>确认 <strong>退款 / 换 IP 政策</strong>后再开始迁移正式账号与数据。</li>
+      </ol>
+
+      <div class="callout">
+        <span class="co-icon">💡</span>
+        <p>「住宅IP」「原生IP」「双ISP」通常是商家对具体产品或号段的描述，<strong>并不代表同一厂商的全部 IP</strong>。
+        本站名单中相关产品：VMISS（英国双ISP住宅IP）、DMIT（原生IP系列）。退款规则以商家当期条款为准。</p>
+      </div>
+    </section>
+
+    <!-- ③ No KYC -->
+    <section class="doc-section" id="no-kyc">
+      <div class="scene-head"><span class="sh-icon">🔐</span><h2>③ No KYC 的真实含义</h2></div>
+      <p class="sec-lead">「No KYC」（Know Your Customer）通常表示常规注册或下单流程不主动要求上传身份证明——但它不等于完全匿名。</p>
+
+      <h3>必须知道的四点</h3>
+      <ul>
+        <li><strong>风控随时可能触发验证</strong>：服务商或支付机构可能因风控、退款、争议或滥用投诉要求补充身份、地址或付款证明；</li>
+        <li><strong>加密货币支付 ≠ 零记录</strong>：支付方式匿名不等于服务本身不记录账户、IP 或使用日志；</li>
+        <li><strong>司法辖区差异</strong>：不同国家和地区的法律、税务及合规要求不同，商家的数据保留政策取决于其注册地；</li>
+        <li><strong>以最新条款为准</strong>：付款前应查看最新隐私政策、服务条款和结算页面，不要只依据第三方整理表（包括本站）。</li>
+      </ul>
+
+      <div class="callout callout--red">
+        <span class="co-icon">⚠️</span>
+        <p>本站名单中所有厂商的 KYC 要求均标注为「以实时风控为准」——这是诚实答案：任何商家都无法承诺「永远不要求验证」。
+        高防需求看 <a href="providers.html#spartanhost">SpartanHost</a> / <a href="providers.html#sharktech">SharkTech</a>；
+        隐私需求重点阅读公司主体、隐私政策、日志和数据保留条款。场景详情见 <a href="scenarios.html#scene9">场景九</a>。</p>
+      </div>
+    </section>
+
+    <!-- ④ VPS / 云服务器 / 虚拟主机 -->
+    <section class="doc-section" id="vps-vs-hosting">
+      <div class="scene-head"><span class="sh-icon">🖥️</span><h2>④ VPS / 云服务器 / 虚拟主机怎么选</h2></div>
+      <p class="sec-lead">中文语境里 VPS 和云服务器经常混用，但它们和虚拟主机的差别是实打实的。</p>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>对比项</th><th>VPS</th><th>虚拟主机</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">资源隔离</td><td>✅ 独立系统环境和分配资源（vCPU 通常仍共享物理 CPU）</td><td>❌ 多账户共享主机环境</td></tr>
+            <tr><td class="pname">控制权</td><td>✅ Root 权限，完全控制</td><td>❌ 只能通过面板管理</td></tr>
+            <tr><td class="pname">灵活性</td><td>✅ 可安装任意软件</td><td>❌ 受限于主机商配置</td></tr>
+            <tr><td class="pname">价格</td><td>较贵（$3/月起）</td><td>便宜（$1/月起）</td></tr>
+            <tr><td class="pname">适用场景</td><td>开发、建站、代理等</td><td>简单建站</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>一句话决策</h3>
+      <ul>
+        <li>愿意学一点服务器管理、需要自由度 → <strong>VPS</strong>（入门看 <a href="providers.html#interserver">InterServer $3/月</a>）；</li>
+        <li>只想放个 WordPress、完全不想管服务器 → <strong>托管型主机</strong>（看 <a href="providers.html#hostinger">Hostinger</a>）；</li>
+        <li>国内业务、要备案、要弹性扩容 → <strong>国内云服务器</strong>（阿里云 / 腾讯云，不在本站境外名单范围内）。</li>
+      </ul>
+
+      <div class="callout callout--green">
+        <span class="co-icon">💡</span>
+        <p>严格说，云服务器强调弹性资源、快照、内网、安全组和云厂商生态；传统 VPS 更像固定配置的虚拟服务器。
+        新手做海外业务从 VPS 起步完全够用，业务长大再迁移云平台也不迟。</p>
+      </div>
+    </section>
+
+    <!-- ⑤ 线路测试 -->
+    <section class="doc-section" id="test">
+      <div class="scene-head"><span class="sh-icon">📡</span><h2>⑤ 如何测试 VPS 线路质量</h2></div>
+      <p class="sec-lead">四种常用方式 + 一组量化判断标准。重点：一定要测晚高峰。</p>
+
+      <ol>
+        <li><strong>Ping 测试</strong>：<code>ping IP地址</code> 查看延迟与丢包；</li>
+        <li><strong>路由追踪</strong>：<code>traceroute IP地址</code>（Windows 用 <code>tracert</code>）查看路由路径，判断是否走 CN2 / 9929 / CMIN2；</li>
+        <li><strong>测速工具</strong>：speedtest.net 或服务器上跑 speedtest CLI 测试带宽；</li>
+        <li><strong>第三方评测</strong>：参考 vpsmoon.com 等实测数据，交叉验证商家宣传。</li>
+      </ol>
+
+      <h3>量化判断标准</h3>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>指标</th><th>合格线</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">香港 VPS 延迟</td><td class="price">&lt; 50ms ✅</td><td>对延迟敏感业务（游戏、实时通讯）优先香港</td></tr>
+            <tr><td class="pname">美国 VPS 延迟</td><td class="price">&lt; 200ms ✅</td><td>CN2 GIA 通常 130-150ms</td></tr>
+            <tr><td class="pname">丢包率</td><td class="price">&lt; 1% ✅</td><td>持续丢包说明线路拥塞或路由差</td></tr>
+            <tr><td class="pname">晚高峰稳定性</td><td class="price">20:00-23:00 稳定 ✅</td><td>晚高峰掉速 / 丢包飙升是普通线路的典型问题</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <span class="co-icon">💡</span>
+        <p>测试建议：分别在<strong>电信 / 联通 / 移动</strong>网络下各测一次（三网表现可能完全不同）；
+        路由追踪里看到 <code>59.43.x.x</code>（CN2）、<code>219.158.x.x</code>（联通）、<code>202.97.x.x</code>（163骨干）等节点可以帮你判断实际走向。</p>
+      </div>
+    </section>
+
+    <!-- ⑥ SMTP -->
+    <section class="doc-section" id="smtp-port">
+      <div class="scene-head"><span class="sh-icon">✉️</span><h2>⑥ 邮件端口与 SMTP 注意事项</h2></div>
+      <p class="sec-lead">自建邮件服务最容易翻车的不是配置，而是端口政策与 IP 信誉。</p>
+
+      <ul>
+        <li><strong>25 端口常被默认封锁</strong>：不少云厂商会默认限制 25 端口出站，或要求完成账户验证后申请解封——下单前先问客服；</li>
+        <li><strong>PTR / rDNS 必须可设置</strong>：反向解析缺失是进垃圾箱的常见原因，确认商家允许设置 PTR 记录；</li>
+        <li><strong>IP 历史信誉要查</strong>：拿到 IP 先在 Spamhaus 等黑名单平台查询历史记录；</li>
+        <li><strong>「住宅IP」不保证送达率</strong>：住宅属性降低被识别为数据中心 IP 的概率，但邮件送达率还取决于 SPF/DKIM/DMARC 配置与发送行为；</li>
+        <li><strong>合规底线</strong>：群发遵守目标国家反垃圾邮件法律（CAN-SPAM、GDPR 等），提供退订入口。</li>
+      </ul>
+
+      <div class="callout callout--warn">
+        <span class="co-icon">📮</span>
+        <p>本站名单中住宅 IP 相关产品见 <a href="providers.html#vmiss">VMISS</a>（英国双ISP住宅IP）。
+        2026-08 名单内<strong>没有足够多可统一推荐的境外住宅 SMTP 厂商</strong>，邮件场景请先小规模测试再放大。场景详情见 <a href="scenarios.html#scene5">场景五</a>。</p>
+      </div>
+    </section>
+
+    <!-- ⑦ 流媒体解锁 -->
+    <section class="doc-section" id="media-unlock">
+      <div class="scene-head"><span class="sh-icon">🎬</span><h2>⑦ 流媒体解锁的原理与提醒</h2></div>
+      <p class="sec-lead">为什么买了 VPS 却解锁不了 Netflix？理解平台怎么判断，就明白怎么选了。</p>
+
+      <h3>平台如何判断你的 IP</h3>
+      <ul>
+        <li><strong>IP 数据库</strong>：平台维护机房 IP 黑名单，数据中心 IP 段通常直接被限制；</li>
+        <li><strong>注册地一致性</strong>：IP 广播地区与支付账号地区一致时解锁概率更高（原生 IP 的价值所在）；</li>
+        <li><strong>行为风控</strong>：同一 IP 高频切换账号、大量异常访问会触发风控；</li>
+        <li><strong>动态调整</strong>：平台持续更新 IP 数据库，今天的解锁状态不代表明天。</li>
+      </ul>
+
+      <h3>选购与自测建议</h3>
+      <ol>
+        <li>优先选择支持<strong>更换 IP / 有退款期</strong>的套餐（本站名单见 <a href="scenarios.html#scene7">场景七</a>）；</li>
+        <li>拿到 IP 后先访问目标平台测试，或使用公开的流媒体解锁检测脚本；</li>
+        <li>日本节点看 <a href="providers.html#vmiss">VMISS</a>（IIJ/BGP），香港/洛杉矶多线路看 <a href="providers.html#bwh">搬瓦工</a> 与 <a href="providers.html#dmit">DMIT</a>；</li>
+        <li>不要把线路名称（CN2 GIA 等）等同于解锁能力——线路只决定速度，IP 属性决定解锁。</li>
+      </ol>
+    </section>
+
+    <!-- ⑧ 买完之后 -->
+    <section class="doc-section" id="after-buy">
+      <div class="scene-head"><span class="sh-icon">🛠️</span><h2>⑧ 买完 VPS 后的装机流程</h2></div>
+      <p class="sec-lead">新手买完 VPS 常常卡在「然后呢」。按这个顺序走，10 分钟能登上去开始干活。</p>
+
+      <ol>
+        <li><strong>收到开通邮件</strong>：记录 IP、root 密码（或 SSH 密钥）、面板地址；</li>
+        <li><strong>SSH 登录</strong>：<code>ssh root@你的IP</code>（Windows 可用 PowerShell 或 PuTTY / Termius）；</li>
+        <li><strong>更新系统</strong>：Debian/Ubuntu 执行 <code>apt update &amp;&amp; apt upgrade -y</code>，并修改 root 密码、可选改 SSH 端口 + 密钥登录；</li>
+        <li><strong>装管理面板（可选）</strong>：不熟命令行可装 1Panel / 宝塔等可视化面板管理网站、数据库和防火墙；</li>
+        <li><strong>配置防火墙</strong>：只放行需要的端口（22/80/443 等），关闭不必要的服务；</li>
+        <li><strong>设置自动备份</strong>：快照（商家面板）+ 异地备份（如 InterServer Storage VPS）双保险；</li>
+        <li><strong>部署业务</strong>：WordPress 用面板一键部署，或 Docker / LNMP 按需选择；</li>
+        <li><strong>基础监控</strong>：装个轻量监控（如 uptime 探针），宕机第一时间知道。</li>
+      </ol>
+
+      <div class="callout callout--green">
+        <span class="co-icon">💡</span>
+        <p>Linux 发行版建议：<strong>Debian / Ubuntu / AlmaLinux</strong> 任选其一即可，教程最多。
+        Windows VPS 只在必须运行 Windows 软件、远程桌面或 .NET 环境时才需要，普通建站不推荐。</p>
+      </div>
+    </section>
+
+    <!-- ⑨ 避坑清单 -->
+    <section class="doc-section" id="checklist">
+      <div class="scene-head"><span class="sh-icon">✅</span><h2>⑨ 选购避坑清单</h2></div>
+      <p class="sec-lead">下单前逐条打勾，全部通过再付款。</p>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>检查项</th><th>要看什么</th><th>常见坑</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">□ 结算页价格</td><td>实际付款金额、续费价、付款周期（月/季/年）</td><td>活动价只管首期，续费翻倍</td></tr>
+            <tr><td class="pname">□ 库存与到货</td><td>下单页面是否有货、开通时效</td><td>RackNerd $11.29/年 已无库存仍被旧文引用</td></tr>
+            <tr><td class="pname">□ 退款政策</td><td>退款期限、是否全额、支付渠道限制</td><td>加密货币支付通常不可退</td></tr>
+            <tr><td class="pname">□ 机房位置</td><td>离目标用户近，而不是离你近</td><td>外贸站为国内访问牺牲海外体验</td></tr>
+            <tr><td class="pname">□ 线路实测</td><td>三网晚高峰 ping / 路由 / 丢包</td><td>只看「CN2 GIA」标签下单</td></tr>
+            <tr><td class="pname">□ IP 属性</td><td>ASN、广播地区、黑名单记录</td><td>「住宅IP」实际是机房段</td></tr>
+            <tr><td class="pname">□ 端口政策</td><td>25 端口（SMTP）是否开放、如何解封</td><td>买完才发现发不了邮件</td></tr>
+            <tr><td class="pname">□ 备份能力</td><td>快照功能、自动备份、备份收费与否</td><td>数据只存一份，机器挂了全丢</td></tr>
+            <tr><td class="pname">□ 支付方式</td><td>支付宝 / PayPal / 信用卡，自动续费可否关闭</td><td>忘记取消自动续费</td></tr>
+            <tr><td class="pname">□ 服务条款</td><td>可接受使用政策（AUP）、日志与数据保留条款</td><td>用途违反 AUP 被直接停机</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <span class="co-icon">🧭</span>
+        <p>还是拿不准？回到 <a href="index.html#selector">智能 VPS 推荐系统</a> 按场景 + 预算 + 地区筛一遍，
+        或直接查 <a href="scenarios.html">九大场景</a> 对号入座。</p>
+      </div>
+    </section>
+
+    <!-- 附：收录标准 -->
+    <section class="doc-section" id="standards">
+      <div class="scene-head"><span class="sh-icon">📋</span><h2>附：收录标准与透明声明</h2></div>
+      <h3>收录标准</h3>
+      <ul>
+        <li>只保留能够<strong>明确识别为境外运营</strong>的 VPS 厂商；</li>
+        <li>每个场景给出<strong>优先厂商组合</strong>，而不是唯一答案；</li>
+        <li>价格、库存、IP 属性、风控要求<strong>每月核对</strong>，标注核对日期；</li>
+        <li>无法统一核验的产品（如多数住宅 SMTP）<strong>明确说明「不推荐」</strong>，不硬凑名单。</li>
+      </ul>
+      <h3>透明声明</h3>
+      <p>本站部分链接为联盟营销链接（Affiliate Links）：通过这些链接购买 VPS，我们可能获得佣金，但<strong>不影响你的购买价格</strong>。
+      推荐排序以建站场景、稳定性、价格和维护难度为主要判断依据，价格库存以商家官网为准。</p>
+      <p style="margin-top:18px;"><a class="btn btn--ghost" href="faq.html">继续阅读：常见问题与更新记录 →</a></p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="fb-name"><span class="brand-badge">V</span>VPS1000</div>
+        <p>2026 海外 VPS 推荐指南：按九大使用场景分类，只收录能明确识别为境外运营的厂商，每月核对价格、库存与线路变化。</p>
+        <p style="margin-top:10px;">本指南适合：个人开发者 · 站长 · 跨境电商从业者 · TikTok 运营者 · 海外华人 · 海外业务用户</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="index.html">首页推荐</a></li>
+          <li><a href="scenarios.html">九大场景</a></li>
+          <li><a href="providers.html">厂商档案</a></li>
+          <li><a href="guides.html">选购知识</a></li>
+          <li><a href="faq.html">常见问题</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>热门场景</h4>
+        <ul>
+          <li><a href="scenarios.html#scene2">CN2 GIA 回国优化</a></li>
+          <li><a href="scenarios.html#scene1">TikTok 住宅IP</a></li>
+          <li><a href="scenarios.html#scene4">便宜开发测试</a></li>
+          <li><a href="scenarios.html#scene7">流媒体解锁</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>本页专题</h4>
+        <ul>
+          <li><a href="#lines">线路名词表</a></li>
+          <li><a href="#ip-type">IP 类型说明</a></li>
+          <li><a href="#test">线路测试方法</a></li>
+          <li><a href="#checklist">避坑清单</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="disclosure">📌 免责声明：本站部分链接为联盟营销链接（Affiliate Links），通过这些链接购买 VPS 我们可能获得佣金，但不影响你的购买价格。所有 VPS 价格、库存与线路信息核对于 2026-09-03，变动请以商家官网为准。</span>
+      <span>© 2026 VPS1000 · 数据参考 <a href="https://github.com/topseo123/VPStuijian" target="_blank" rel="noopener" style="color:#94a3b8;">VPStuijian</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
