@@ -1,5 +1,5 @@
 /* =========================================================
-   VPS1000 · 跳转逻辑（隐形即时跳转，无中间页）
+   1000VPS · 跳转逻辑（隐形即时跳转，无中间页）
    优先读当前页定义的 GO_KEY（go/<厂商>/index.html 方式），
    其次读 URL 参数 ?to=<key>（go/index.html?to=xxx 方式）。
    命中白名单 → 立即 location.replace，页面内容对用户不可见；
@@ -24,5 +24,5 @@
     '<div style="font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Microsoft YaHei\',sans-serif;' +
     'min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">' +
     '<p style="font-size:14px;color:#64748b;">⚠️ ' + (key ? '「' + key + '」' : '') +
-    '链接不存在或已失效，<a href="' + home + '" style="color:#2563eb;font-weight:700;">返回 VPS1000 首页</a>。</p></div>';
+    '链接不存在或已失效，<a href="' + home + '" style="color:#2563eb;font-weight:700;">返回 1000VPS 首页</a>。</p></div>';
 })();
