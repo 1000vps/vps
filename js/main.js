@@ -94,7 +94,7 @@
     },
     vmiss: {
       name: 'VMISS', cls: 'logo-vmiss', mark: 'V',
-      price: '约 CAD $4–5/月起（优惠码 10%off / INTL30%OFF）',
+      price: '约 CAD $4–5/月起',
       scenes: ['tiktok', 'cn', 'media', 'smtp'],
       budgets: ['b1', 'b2'],
       regions: ['cn', 'both'],

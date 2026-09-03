@@ -413,9 +413,9 @@ a:hover { color: var(--primary-dark); }
 }
 .rank-flag.warn { background: var(--accent-soft); color: #92400e; }
 .rank-flag.ok { background: var(--green-soft); color: #166534; }
-.rank-title-row h3 a, .scene-head h2 a { color: inherit; transition: color .15s; }
-.rank-title-row h3 a::after, .scene-head h2 a::after { content: ' ↗'; font-size: .7em; font-weight: 700; color: var(--primary); vertical-align: .1em; }
-.rank-title-row h3 a:hover, .scene-head h2 a:hover { color: var(--primary); }
+.rank-title-row h3 a, .scene-head h2 a, .pl-title h3 a { color: inherit; transition: color .15s; }
+.rank-title-row h3 a::after, .scene-head h2 a::after, .pl-title h3 a::after { content: ' ↗'; font-size: .7em; font-weight: 700; color: var(--primary); vertical-align: .1em; }
+.rank-title-row h3 a:hover, .scene-head h2 a:hover, .pl-title h3 a:hover { color: var(--primary); }
 .rank-sub { font-size: 14.5px; font-weight: 600; color: var(--primary-dark); margin: 4px 0 8px; }
 .rank-body p.desc { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
 
@@ -669,6 +669,8 @@ table.data .muted { color: var(--muted); font-size: 13px; }
   background: var(--accent-soft); color: #92400e;
   white-space: nowrap;
 }
+.plan-item summary a.pl-chip { text-decoration: none; transition: filter .15s; }
+.plan-item summary a.pl-chip:hover { filter: brightness(.93); }
 .plan-item summary .caret { flex: none; transition: transform .2s; color: var(--muted); }
 .plan-item[open] summary .caret { transform: rotate(180deg); }
 .plan-item .plan-body { padding: 0 24px 22px; }
