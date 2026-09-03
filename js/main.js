@@ -28,6 +28,29 @@
     }, true);
   });
 
+  /* ---------------- 表格横向滚动提示 ----------------
+     表格超宽时在右缘显示「左右滑动」提示，滑到最右自动隐藏 */
+  var tableWraps = Array.prototype.slice.call(document.querySelectorAll('.table-wrap'));
+  function updateTableHints() {
+    tableWraps.forEach(function (el) {
+      var needs = el.scrollWidth - el.clientWidth > 8;
+      el.classList.toggle('needs-scroll', needs);
+      if (needs) {
+        el.classList.toggle('at-end', el.scrollLeft + el.clientWidth >= el.scrollWidth - 8);
+      } else {
+        el.classList.remove('at-end');
+      }
+    });
+  }
+  if (tableWraps.length) {
+    tableWraps.forEach(function (el) {
+      el.addEventListener('scroll', updateTableHints, { passive: true });
+    });
+    updateTableHints();
+    window.addEventListener('resize', updateTableHints, { passive: true });
+    window.addEventListener('load', updateTableHints);
+  }
+
   /* ---------------- 回到顶部 ---------------- */
   var backTop = document.querySelector('.back-top');
   if (backTop) {
