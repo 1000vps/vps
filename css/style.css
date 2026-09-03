@@ -413,6 +413,9 @@ a:hover { color: var(--primary-dark); }
 }
 .rank-flag.warn { background: var(--accent-soft); color: #92400e; }
 .rank-flag.ok { background: var(--green-soft); color: #166534; }
+.rank-title-row h3 a, .scene-head h2 a { color: inherit; transition: color .15s; }
+.rank-title-row h3 a::after, .scene-head h2 a::after { content: ' ↗'; font-size: .7em; font-weight: 700; color: var(--primary); vertical-align: .1em; }
+.rank-title-row h3 a:hover, .scene-head h2 a:hover { color: var(--primary); }
 .rank-sub { font-size: 14.5px; font-weight: 600; color: var(--primary-dark); margin: 4px 0 8px; }
 .rank-body p.desc { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
 
@@ -602,6 +605,18 @@ table.data tbody tr:last-child td { border-bottom: none; }
 table.data tbody tr:hover td { background: #f8fafc; }
 table.data .price { font-weight: 800; color: var(--primary-dark); white-space: nowrap; }
 table.data .price--hot { color: var(--red); }
+.text-red { color: var(--red); font-weight: 700; }
+.buy-hint {
+  display: flex; align-items: center; gap: 10px;
+  margin: 14px 0 18px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: var(--red-soft);
+  border: 1px dashed var(--red);
+  color: var(--red);
+  font-size: 14.5px; font-weight: 700;
+}
+.buy-hint .bh-icon { font-size: 17px; flex-shrink: 0; }
 table.data .pname { font-weight: 700; color: var(--ink); white-space: nowrap; }
 table.data .center { text-align: center; }
 table.data .nowrap { white-space: nowrap; }
@@ -1148,6 +1163,7 @@ table.data .muted { color: var(--muted); font-size: 13px; }
   .result-box { padding: 16px 14px; }
 
   table.data { min-width: 560px; font-size: 12.5px; }
+  .buy-hint { font-size: 13px; padding: 10px 12px; gap: 8px; }
   table.data th { padding: 9px 10px; }
   table.data td { padding: 9px 10px; }
 
